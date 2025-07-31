@@ -1,0 +1,28 @@
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class Test3 {
+	public static Character main(String[] args) {
+		
+		//find maximum occurring character in the given String String s="java programming"; o/p= a,3
+		
+		String str = "java programming";
+		
+		Optional<Map.Entry<Character , Long>> maxOcc = 
+				str.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+		.entrySet()
+		.stream()
+		.max(Comparator.comparingLong(Map.Entry::getValue));
+		
+		return maxOcc.map(Map.Entry::getKey).orElseThrow(() -> new IllegalStateException("No String"));
+		
+	
+		
+		
+	}
+
+}

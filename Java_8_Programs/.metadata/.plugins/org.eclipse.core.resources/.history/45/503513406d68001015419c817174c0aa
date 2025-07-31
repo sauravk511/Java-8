@@ -1,0 +1,40 @@
+package Stringstest;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class CityProcessor {
+	
+	/// List<String> cities={"cHeNNai", "muMbai", "deLHI", "muMBai"}
+
+	//1. Convert each string in Pascal/Title case , e.g {"Chennai", "Mumbai", "Delhi", "Mumbai"}
+	//2. Find the occurrency of strings , e.g. Chennai-1, Delhi-1, Mumbai-2
+	
+	List<String> cities = Arrays.asList("cHeNNai", "muMbai", "deLHI", "muMBai");
+
+    // 1. Convert each string to Title Case (Pascal Case)
+    List<String> titleCaseCities = cities.stream()
+            .map(CityProcessor::toTitleCase)
+            .collect(Collectors.toList());
+
+    System.out.println("Title Case Cities: " + titleCaseCities);
+
+    // 2. Count occurrences
+    Map<String, Long> cityCount = titleCaseCities.stream()
+            .collect(Collectors.groupingBy(city -> city, Collectors.counting()));
+
+    System.out.println("City Frequencies:");
+    cityCount.forEach((city, count) -> System.out.println(city + " - " + count));
+}
+
+// Helper method to convert to Title Case
+private static String toTitleCase(String input) {
+    if (input == null || input.isEmpty()) return input;
+    input = input.toLowerCase();
+    return input.substring(0, 1).toUpperCase() + input.substring(1);
+}
+}
+
+}

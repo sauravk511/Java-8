@@ -1,0 +1,22 @@
+package Stringstest;
+
+import java.util.List;
+
+public class Test6 {
+	
+	public static void main(String[] args) {
+		
+//		List<Integer> values = List.of(1,2,3,4,5,6,7);   // 1,2,3,4,5,7
+//		values.stream() 
+//		.skip(5) 
+//		.limit(3) 
+//		.forEach(System.out :: println);
+//		
+		
+		List<String> value = List.of("Java","c","c++","python");
+		value.stream().sorted().forEach(System.out::println);
+		
+		
+	}
+
+}
