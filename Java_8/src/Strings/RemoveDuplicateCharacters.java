@@ -8,9 +8,9 @@ public class RemoveDuplicateCharacters {
 		
 		// for character
 		String s = "sauravkumar";
-		Arrays.stream(s.split("")).distinct().forEach(System.out::print);
+		Arrays.stream(s.split("")).distinct().forEach(x -> System.out.print(x+" "));
 		
-		System.out.println("-------------------");
+		System.out.println();
 		
 		// for word
 		String word = "my name is saurav kumar my hometown is in Patna";
