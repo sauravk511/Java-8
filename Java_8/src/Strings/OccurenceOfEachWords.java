@@ -12,9 +12,8 @@ public class OccurenceOfEachWords {
 		String str = "Hi my name is saurav kumar and my latop name is MAC";
 		
 		Map<String, Long> wordOccurence = Arrays.stream(str.split(" "))
-										.collect(Collectors.groupingBy(Function.identity(), 
-												 Collectors.counting()));
-		
+				.collect(Collectors.groupingBy(Function.identity(),	
+						 Collectors.counting()));
 		System.out.println(wordOccurence);
 		
 	}
