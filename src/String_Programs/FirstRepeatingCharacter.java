@@ -13,6 +13,22 @@ public class FirstRepeatingCharacter {
                 .findFirst()
                 .orElse(null);
         System.out.println("First repeating character : " + repeated);
+
+        // Second repeating character
+        // Example: "abccdde" -> 'c' is the first repeating character,
+        // 'd' is the second repeating character
+        Set<Character> set1 = new HashSet<>();
+        Character secondRepeated = "abccdde"
+                .chars()
+                .mapToObj(c-> (char)c)
+                .filter(c -> !set1.add(c))
+                .skip(1)
+                .findFirst()
+                .orElse(null);
+        System.out.println("Second repeating character : " + secondRepeated);
     }
 }
-// Output:- First repeating character : c
+/* Output:-
+First repeating character : c
+Second repeating character : d
+*/
