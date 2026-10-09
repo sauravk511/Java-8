@@ -14,7 +14,8 @@ public class RemoveDuplicateCharacters {
                 .collect(Collectors.joining());
         System.out.println("Using Stream API: " + result);
 
-        // Method 2: Using StringBuilder
+        // Method 2: Using Arrays.stream() and forEach
+        System.out.print("Using Arrays.stream() and forEach: ");
         Arrays.stream(str.split(""))
                 .distinct()
                 .forEach(System.out::print);
