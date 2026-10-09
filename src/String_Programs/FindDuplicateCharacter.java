@@ -15,3 +15,10 @@ public class FindDuplicateCharacter {
                 .forEach(System.out::println);
     }
 }
+
+/*
+Output:-
+r=2
+g=2
+m=2
+ */
