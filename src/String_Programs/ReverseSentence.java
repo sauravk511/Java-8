@@ -2,6 +2,7 @@ package String_Programs;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class ReverseSentence {
@@ -15,6 +16,15 @@ public class ReverseSentence {
                             return String.join(" ", list);
                         } ));
         System.out.println(result);
+
+        // Method 2:- Using Collections.reverse() method
+        String sentence = "Python is second most popular language";
+        List<String> words = Arrays.asList(sentence.split(" "));
+        Collections.reverse(words);
+        String res = String.join(" ", words);
+        System.out.println(res);
     }
 }
-// Output:- powerful very is Java
+// Output:-
+// powerful very is Java
+// language popular most second is Python
